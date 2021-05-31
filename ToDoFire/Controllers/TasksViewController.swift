@@ -19,7 +19,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         cell.textLabel?.text = "This is cell number \(indexPath.row)"
-        cell.textLabel?.textColor = .black
+        //cell.textLabel?.textColor = UIColor(red: 35.0, green: 31.0, blue: 32.0, alpha: 1.0)
         return cell
     }
     
