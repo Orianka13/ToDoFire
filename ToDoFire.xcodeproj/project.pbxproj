@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		59D683BC2665283B004EFB9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59D683BA2665283B004EFB9C /* LaunchScreen.storyboard */; };
 		59D683C4266533FA004EFB9C /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D683C3266533FA004EFB9C /* TasksViewController.swift */; };
 		59D683CA2666640B004EFB9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59D683C92666640B004EFB9C /* GoogleService-Info.plist */; };
+		59D683CC26669A15004EFB9C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D683CB26669A15004EFB9C /* Task.swift */; };
+		59D683CE26669A1E004EFB9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D683CD26669A1E004EFB9C /* User.swift */; };
 		779051CBD8940B1DC28C6405 /* Pods_ToDoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70EE7407F6B921061CE1D92 /* Pods_ToDoFire.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		59D683BD2665283B004EFB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59D683C3266533FA004EFB9C /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		59D683C92666640B004EFB9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		59D683CB26669A15004EFB9C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		59D683CD26669A1E004EFB9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C06C0C36817D0C1E3E79D23 /* Pods-ToDoFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoFire.release.xcconfig"; path = "Target Support Files/Pods-ToDoFire/Pods-ToDoFire.release.xcconfig"; sourceTree = "<group>"; };
 		A70EE7407F6B921061CE1D92 /* Pods_ToDoFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 		59D683AE26652838004EFB9C /* ToDoFire */ = {
 			isa = PBXGroup;
 			children = (
+				59D683CF26669A25004EFB9C /* Models */,
 				59D683C6266534C5004EFB9C /* Controllers */,
 				59D683C526653469004EFB9C /* Supporting files */,
 			);
@@ -96,6 +101,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		59D683CF26669A25004EFB9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59D683CB26669A15004EFB9C /* Task.swift */,
+				59D683CD26669A1E004EFB9C /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B2BCE7E9F73BEB2ECD4EC770 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +124,6 @@
 				25F9CBDB89938B67BAE9D86D /* Pods-ToDoFire.debug.xcconfig */,
 				9C06C0C36817D0C1E3E79D23 /* Pods-ToDoFire.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -231,6 +244,8 @@
 			files = (
 				59D683B426652839004EFB9C /* LoginViewController.swift in Sources */,
 				59D683C4266533FA004EFB9C /* TasksViewController.swift in Sources */,
+				59D683CE26669A1E004EFB9C /* User.swift in Sources */,
+				59D683CC26669A15004EFB9C /* Task.swift in Sources */,
 				59D683B026652838004EFB9C /* AppDelegate.swift in Sources */,
 				59D683B226652839004EFB9C /* SceneDelegate.swift in Sources */,
 			);
