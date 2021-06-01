@@ -69,7 +69,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8E-Vo-Bmt"/>
-                                                    <segue destination="cX8-Va-iX3" kind="show" identifier="tasksSegue" id="kKR-GO-2Rw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMi-yD-SuG">
@@ -113,6 +112,7 @@
                         <outlet property="emailTF" destination="Pxi-kO-OUq" id="xP4-Iq-vrh"/>
                         <outlet property="passwordTF" destination="rOD-mp-dhW" id="J4a-nN-Np8"/>
                         <outlet property="warningLabel" destination="dQ4-hH-cnT" id="YbI-bM-mne"/>
+                        <segue destination="cX8-Va-iX3" kind="show" identifier="tasksSegue" id="qjy-av-CeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,6 +160,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="Xtm-7u-cSH">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="ytN-mF-9sT">
+                            <connections>
+                                <action selector="signOutTapped:" destination="KeM-Bz-b1i" id="5bN-jJ-WeN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4DF-A5-ljn">
                             <connections>
                                 <action selector="addTapped:" destination="KeM-Bz-b1i" id="Jlv-6d-IC7"/>
