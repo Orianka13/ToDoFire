@@ -17,19 +17,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        cell.textLabel?.text = "This is cell number \(indexPath.row)"
-        //cell.textLabel?.textColor = UIColor(red: 35.0, green: 31.0, blue: 32.0, alpha: 1.0)
-        return cell
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +25,37 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ref.observe(.value) { [weak self] (snapshot) in
+            var _tasks = Array<Task>()
+            for item in snapshot.children {
+                let task = Task(snapshot: item as! DataSnapshot)
+                _tasks.append(task)
+            }
+            self?.tasks = _tasks
+            self?.tableView.reloadData()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        ref.removeAllObservers()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let taskTitle = tasks[indexPath.row].title
+        cell.textLabel?.text = taskTitle
+        //cell.textLabel?.textColor = UIColor(red: 35.0, green: 31.0, blue: 32.0, alpha: 1.0)
+        return cell
+    }
+    
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "New Task", message: "Add new task", preferredStyle: .alert)
         alertController.addTextField()
